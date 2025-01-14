@@ -1,30 +1,14 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
-
 from langchain_community.utilities import SQLDatabase
 from langchain.agents import create_sql_agent
 from sqlalchemy import create_engine
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
-
-# from langchain_experimental.agents import create_pandas_dataframe_agent
-from langchain_experimental.tools import PythonAstREPLTool
-
 from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
-
 from langchain.agents.agent_types import AgentType
 from langchain.callbacks import StreamlitCallbackHandler
-
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
-
-#import plotly.express as px
-#import plotly.graph_objects as go
-from sqlalchemy import create_engine
 import sqlite3
-from datetime import datetime
-import numpy as np
 
 # Initialize session state variables
 def init_session_state():
@@ -39,8 +23,8 @@ def init_session_state():
 
 init_session_state()
 
-st.set_page_config(page_title="LangChain: Chat with SQL DB", page_icon="🦜")
-st.title("🦜 LangChain: Chat with SQL DB")
+st.set_page_config(page_title="LangChain: Chat with SQL DB", page_icon="📊")
+st.title("📊 LangChain: Chat with SQL DB")
 
 LOCALDB="USE_LOCALDB"
 MYSQL="USE_MYSQL"
