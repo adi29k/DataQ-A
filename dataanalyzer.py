@@ -91,10 +91,10 @@ def main():
         selected_opt=st.radio(label="Choose the DB which you want to chat",options=radio_opt)
         if radio_opt.index(selected_opt)==1:
             db_uri=MYSQL
-            mysql_host=st.sidebar.text_input("Provide MySQL Host")
-            mysql_user=st.sidebar.text_input("MYSQL User")
-            mysql_password=st.sidebar.text_input("MYSQL password",type="password")
-            mysql_db=st.sidebar.text_input("MySQL database")
+            mysql_host=st.sidebar.text_input("Provide MySQL Host",st.secrets["host"])
+            mysql_user=st.sidebar.text_input("MYSQL User", st.secrets["user"])
+            mysql_password=st.sidebar.text_input("MYSQL password",st.secrets["password"], type="password")
+            mysql_db=st.sidebar.text_input("MySQL database", st.secrets["database"])
         else:
             db_uri=LOCALDB
 
