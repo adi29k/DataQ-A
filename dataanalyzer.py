@@ -110,7 +110,7 @@ def main():
 
     # Initialize LLM
     llm = ChatGroq(
-        api_key=os.environ["GROQ_API_KEY"],
+        api_key=st.secrets["GROQ_API_KEY"],
         model_name="Llama3-8b-8192",
         streaming=True
         )
