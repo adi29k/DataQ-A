@@ -100,7 +100,7 @@ def main():
 
     # Connect to database
     if db_uri==MYSQL:
-        db = SQLDatabase(create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_db}", pool_size=100, max_overflow=200))
+        db = SQLDatabase(create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_db}", pool_size=10, max_overflow=20))
 
     else:
         dbfilepath=(Path(__file__).parent/"chinook.db").absolute()
